@@ -211,6 +211,7 @@ def new_money(expected_money):
     next_audio()
     print(
         f'\n{fontstyle.apply(f"Your Balance is now: {expected_money:.2f} AED","BLUE_BG/ITALIC/BOLD")}')
+    time.sleep(1)
     return expected_money
 
 
@@ -232,6 +233,9 @@ def display_again(expected_money, target_category):
                 f'\n{fontstyle.apply("You do not have enough money to buy an item. To continue, please add more money.","YELLOW_BG/BOLD")}')
             print(
                 f'\n{fontstyle.apply(f"Current Balance: {expected_money:.2f} AED","YELLOW_BG/BOLD")}')
+            winsound.Beep(1000, 500)
+            winsound.Beep(1000, 500)
+            time.sleep(1)
             expected_money = new_money(expected_money)
         else:  # expected_money is greater than 1, display the user's money
             print(
@@ -407,6 +411,7 @@ while True:
                     current_money, valid_category = process_item(
                         current_money, valid_category)
                 else:
+                    error_audio()
                     print(
                         f'\n{fontstyle.apply("⚠  INVALID CODE. PLEASE ENTER A VALID CODE BETWEEN 10 AND 14 ⚠ ","RED_BG/BOLD")}')
                     time.sleep(1)
