@@ -254,7 +254,7 @@ def process_item(expected_money, target_category):
         options_text = "Enter 'Y' to choose another category or 'A' to choose another item from the same category"
     # user has insufficient funds for selected item
     elif expected_money < selected_item["Price"]:
-        warning = f'You do not have enough money to buy {selected_item["Item"]}. Please try another item/category.'
+        warning = f'You do not have enough money to buy {selected_item["Item"]}. Please try another item/category or add more money.'
         options_text = "Enter 'Q' to add more money or 'Y' to choose another category or 'A' to choose another item from the same category"
     # if any of these two conditions are valid it will execute the code below
     if selected_item["Stock"] == 0 or expected_money < selected_item["Price"]:
